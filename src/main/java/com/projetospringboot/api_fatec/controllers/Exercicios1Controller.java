@@ -2,6 +2,8 @@ package com.projetospringboot.api_fatec.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,8 +23,8 @@ public class Exercicios1Controller {
 
     //@PathVariable = anotacao para definir que a variavel nome que é do tipo String será recebida pelo
     //parametro {nome}
-    @GetMapping("/reverter-nome/{nome}")
-    String reverterNome(@PathVariable String nome) {
+    @PostMapping("/reverter-nome")
+    String reverterNome(@RequestBody String nome) {
         return new StringBuilder(nome).reverse().toString();
     }
 
@@ -39,14 +41,8 @@ public class Exercicios1Controller {
 
     @GetMapping("/contar-letras/{texto}")
     String contarLetras(@PathVariable String texto) {
-        int count = 0;
-
-        for (int i = 0; i < texto.length(); i++) {
-            count++;
-        }
-
         // return "A palavra " + texto + "contem " + Integer.toString(count) + "letras";
-        return "A palavra \"" + texto + "\" contém " + count + " letras.";
+        return "A palavra \"" + texto + "\" contém " + texto.length() + " letras.";
     }
 
     @GetMapping("/idade-com-parametro-tipo-integer/{idade}")
