@@ -60,41 +60,34 @@ public class Exercicios1Controller {
         }
     }
 
-    public void teste01() {
-        var usuario = new User("Joao Guilherme", 22);
-    }
+    public static class User {
+        private String name;
+        private int age;
 
-    public class User {
-        private String nome;
-        private Integer idade;
-
+        // Construtor padrão
         public User() {
         }
 
-        public User(String nome, Integer idade) {
-            this.nome = nome;
-            this.idade = idade;
+        // Getters e Setters
+        public String getName() {
+            return name;
         }
 
-        public String getNome() {
-            return nome;
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public void setNome(String nome) {
-            this.nome = nome;
+        public int getAge() {
+            return age;
         }
 
-        public Integer getIdade() {
-            return idade;
-        }
-
-        public void setIdade(Integer idade) {
-            this.idade = idade;
+        public void setAge(int age) {
+            this.age = age;
         }
     }
 
-    @PostMapping("/create-user")
-    public String createUser(@RequestBody User user) {
-        return "Ola " + user.getNome() + " você tem " + user.getIdade() + " anos;";
+    @PostMapping("/register")
+    public String registerUser(@RequestBody User user) {
+        return "Bem-vindo, " + user.getName() + "! Você tem " + user.getAge() + " anos.";
     }
 }
