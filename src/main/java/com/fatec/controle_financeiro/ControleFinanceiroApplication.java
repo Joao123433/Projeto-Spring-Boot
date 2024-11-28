@@ -1,12 +1,13 @@
-package com.projetospringboot.api_fatec;
+package com.fatec.controle_financeiro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiFatecApplication {
+public class ControleFinanceiroApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiFatecApplication.class, args);
+		SpringApplication.run(ControleFinanceiroApplication.class, args);
 	}
+
 }
