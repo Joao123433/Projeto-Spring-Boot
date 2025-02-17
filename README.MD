@@ -111,3 +111,4 @@ Este projeto é uma base simples para um sistema de controle financeiro com oper
 #### Autor
 
 - Desenvolvido por Fábio - fabio.lopes28@fatec.sp.gov.br
+- Desenvolvido por João - joao.oliveira280@fatec.sp.gov.br
